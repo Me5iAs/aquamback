@@ -3,14 +3,16 @@ class conexion {
     //cariale de conexion
     var $cnn;
     function conectar(){
-        /* accesso a aquam
-        $usuario    = "aquampe_admin"; 
-        $clave      = "V?%KswDrwF[0";
-        */
+        // accesso a aquam
+        // $usuario    = "aquampe_admin"; 
+        // $clave      = "V?%KswDrwF[0";
+        // $servidor   = "www.aquam.pe";
+        // $base       = "aquampe_aquapp";
         $servidor   = "localhost";
         $usuario    = "root"; 
         $clave      = "123"; 
         $base       = "aquapp"; 
+
         $link       = mysqli_connect($servidor,$usuario,$clave,$base);        
         
         // configuracion de caracteres UTF8
