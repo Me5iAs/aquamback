@@ -24,6 +24,30 @@ if(isset($_FILES['imagenPropia'])){
   
   if(move_uploaded_file($_FILES['imagenPropia']['tmp_name'], $directorio_final)){
 
+    $imgInfo = getimagesize($directorio_final); 
+    $mime = $imgInfo['mime'];
+    switch($imagen_tipo){ 
+        case 'image/jpeg': 
+            $image = imagecreatefromjpeg($directorio_final); 
+            break; 
+        case 'image/png': 
+            $image = imagecreatefrompng($directorio_final); 
+            break; 
+        case 'image/gif': 
+            $image = imagecreatefromgif($directorio_final); 
+            break; 
+        default: 
+            $image = imagecreatefromjpeg($directorio_final); 
+    } 
+    
+    if(file_exists($directorio_final)){
+      unlink($directorio_final); // Eliminamos la imagen previa si existe.
+    }
+     
+    // Guardamos la imagen
+    imagejpeg($image, $directorio_final, 75); 
+
+
     $data = array(
       'status' => 'success',
       'code' => 200,
