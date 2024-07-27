@@ -3,11 +3,6 @@ class conexion {
     //cariale de conexion
     var $cnn;
     function conectar(){
-        // accesso a aquam
-        // $usuario    = "aquampe_admin"; 
-        // $clave      = "V?%KswDrwF[0";
-        // $servidor   = "www.aquam.pe";
-        // $base       = "aquampe_aquapp";
         $servidor   = "localhost";
         $usuario    = "root"; 
         $clave      = "12345678"; 
